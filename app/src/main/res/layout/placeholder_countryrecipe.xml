@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_recyclerviewMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:id="@+id/thumbnail"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/background" />
+
+        <View
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:id="@+id/text"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@id/thumbnail"
+            android:background="@color/background" />
+
+        <View
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/text"
+            android:id="@+id/tv_mainText"
+            android:background="@color/background" />
+        <View
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/text"
+            android:id="@+id/tv_ratingPlaceholder"
+            android:background="@color/background"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_alignParentRight="true"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/tv_mainText"
+            android:id="@+id/tv_body"
+            android:background="@color/background" />
+        <View
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/tv_body"
+            android:id="@+id/tv_subText"
+            android:background="@color/background" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_below="@+id/tv_subText"
+            android:id="@+id/tv_subbody"
+            android:background="@color/background" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
