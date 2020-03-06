@@ -13,7 +13,9 @@
     <color name="darkblue">#23283a</color>
     <color name="testcolorblue">#152b38</color>
     <color name="pink">#fe104d</color>
-
+    <color name="ucrop_color_widget_background">#ffffff</color>
+    <color name="ucrop_color_inactive_controls_color">#838383</color>
+    <color name="ucrop_color_widget_active">@color/colorPrimary</color>
     <color name="background">#dddddd</color>
 
 

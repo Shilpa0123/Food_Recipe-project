@@ -75,8 +75,13 @@ public interface EndPointUrl {
     Call<UploadObject> add_recipe(
             @Part MultipartBody.Part file,
             @PartMap Map<String, String> partMap
-
     );
+
+    @Multipart
+    @POST("FoodRecipes/update_profile_photo.php?")
+    Call<UploadObject> update_profile_photo(
+            @Part MultipartBody.Part file,
+            @PartMap Map<String, String> partMap);
 
     @GET("/FoodRecipes/getAllRecipes.php")
     Call<List<myRecipesModel>> getAllRecipes(@Query("country_name") String country_name);

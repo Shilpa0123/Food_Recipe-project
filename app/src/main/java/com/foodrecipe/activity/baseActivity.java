@@ -14,7 +14,7 @@ import com.foodrecipe.R;
 import com.foodrecipe.fragments.bookmarkFragment;
 import com.foodrecipe.fragments.historyFragment;
 import com.foodrecipe.fragments.homeFragment;
-import com.foodrecipe.fragments.profileFragment;
+import com.foodrecipe.fragments.newProfileFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,7 @@ public class baseActivity extends AppCompatActivity implements View.OnClickListe
             mList.add(new homeFragment());
             mList.add(new bookmarkFragment());
             mList.add(new historyFragment());
-            mList.add(new profileFragment());
+            mList.add(new newProfileFragment());
         }
 
         viewPager.setAdapter(adapter);

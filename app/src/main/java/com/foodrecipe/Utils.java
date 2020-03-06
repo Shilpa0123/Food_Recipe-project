@@ -32,6 +32,8 @@ import static com.foodrecipe.activity.AddRecipesActivity.outputFileUri;
 public class Utils {
     public static String username = "";
     public static String userID = "";
+    public static int user_recipes;
+    public static double user_rating=0;
     public static Boolean guest = false;
     public static List<myRecipesModel> history = new ArrayList<>();
     public static List<myRecipesModel> saved = new ArrayList<>();

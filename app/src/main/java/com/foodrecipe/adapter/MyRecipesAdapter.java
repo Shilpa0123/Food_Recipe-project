@@ -2,6 +2,7 @@ package com.foodrecipe.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +54,7 @@ public class MyRecipesAdapter extends RecyclerView.Adapter<MyRecipesAdapter.MyVi
             myRecipesModel1.setRecipeName(null);
             myRecipesModel1.setRecipeProcedure(null);
             this.myrecipyList.add(myRecipesModel1);
+            new getUserRating().execute();
         } else {
             this.myrecipyList = new ArrayList<myRecipesModel>();
             myRecipesModel myRecipesModel1 = new myRecipesModel();
@@ -62,13 +64,13 @@ public class MyRecipesAdapter extends RecyclerView.Adapter<MyRecipesAdapter.MyVi
             myRecipesModel1.setRecipeName(null);
             myRecipesModel1.setRecipeProcedure(null);
             this.myrecipyList.add(myRecipesModel1);
+            new getUserRating().execute();
         }
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recyclerview_main, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_main, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -112,6 +114,18 @@ public class MyRecipesAdapter extends RecyclerView.Adapter<MyRecipesAdapter.MyVi
 
     @Override
     public int getItemCount() {
+        Utils.user_recipes = myrecipyList.size() - 1;
         return myrecipyList.size();
+    }
+
+    public class getUserRating extends AsyncTask<String, Void, Void> {
+        @Override
+        protected Void doInBackground(String... strings) {
+            for (int i = 0; i < myrecipyList.size(); i++) {
+                Utils.user_rating = Utils.user_rating + myrecipyList.get(i).getRating();
+            }
+            Utils.user_rating /= myrecipyList.size() - 1;
+            return null;
+        }
     }
 }

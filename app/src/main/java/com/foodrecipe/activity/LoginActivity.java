@@ -193,6 +193,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             editor.putString("phone", response.body().get(0).getPhone());
                             editor.putString("email", response.body().get(0).getEmailid());
                             editor.putString("name", response.body().get(0).getName());
+                            editor.putString("password", response.body().get(0).getPwd());
                             editor.apply();
                         } else
                             Toast.makeText(LoginActivity.this, "Server not responding", Toast.LENGTH_LONG).show();
