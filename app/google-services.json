@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "818309862843",
+    "firebase_url": "https://foodrecipecrashlytic.firebaseio.com",
+    "project_id": "foodrecipecrashlytic",
+    "storage_bucket": "foodrecipecrashlytic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818309862843:android:1303e4802ee123915f209e",
+        "android_client_info": {
+          "package_name": "com.foodrecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818309862843-4q49217trbmrhge66nrasphtdg6avlr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-6qHMRCK4fGKYNQ5MMN4YNcu3TS7wTlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818309862843-4q49217trbmrhge66nrasphtdg6avlr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
