@@ -35,7 +35,7 @@ public class recipeDetail extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     AppCompatImageView iv_mainImage, back, save, saved, edit;
-    AppCompatTextView tv_mainText, tv_procedure_text, tv_ingredient_text;
+    AppCompatTextView tv_mainText, tv_procedure_text, tv_ingredient_text,tv_createdBy_text;
     RatingBar ratingBar;
     int position;
 
@@ -55,6 +55,7 @@ public class recipeDetail extends AppCompatActivity {
         tv_mainText = findViewById(R.id.tv_mainText);
         tv_procedure_text = findViewById(R.id.tv_procedure_text);
         tv_ingredient_text = findViewById(R.id.tv_ingredient_text);
+        tv_createdBy_text = findViewById(R.id.tv_createdBy_text);
         ratingBar = findViewById(R.id.ratingBar);
 
         if (getIntent().getBooleanExtra("editable", false)) {
@@ -93,6 +94,7 @@ public class recipeDetail extends AppCompatActivity {
                     mrecipeSaved.setRating(Float.parseFloat(getIntent().getStringExtra("ratingBar")));
                     mrecipeSaved.setRecipeName(getIntent().getStringExtra("mainText"));
                     mrecipeSaved.setRecipeProcedure(getIntent().getStringExtra("procedure_text"));
+                    mrecipeSaved.setCreated_by(getIntent().getStringExtra("author"));
                     Utils.saved.add(mrecipeSaved);
                     setList("saved", Utils.saved, editor);
                 }
@@ -128,6 +130,7 @@ public class recipeDetail extends AppCompatActivity {
         tv_mainText.setText(getIntent().getStringExtra("mainText"));
         tv_procedure_text.setText(getIntent().getStringExtra("procedure_text"));
         tv_ingredient_text.setText(getIntent().getStringExtra("ingredient_text"));
+        tv_createdBy_text.setText(getIntent().getStringExtra("author"));
         ratingBar.setRating(Math.round(Float.parseFloat(getIntent().getStringExtra("ratingBar"))));
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
 

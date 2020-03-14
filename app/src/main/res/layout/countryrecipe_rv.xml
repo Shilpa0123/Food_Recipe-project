@@ -26,6 +26,7 @@
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:background="@drawable/back_white" />
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/edit"
                 android:layout_width="@dimen/_25sdp"
@@ -34,7 +35,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:background="@drawable/edit_prof_img"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/save"
@@ -116,6 +117,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_procedure"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:textColor="#838383"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_createdBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_procedure_text"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:text="Author"
+                    android:textColor="#FD792B"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_createdBy_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_createdBy"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:textColor="#838383"

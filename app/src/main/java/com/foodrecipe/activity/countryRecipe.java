@@ -230,6 +230,7 @@ public class countryRecipe extends AppCompatActivity {
                     Intent intent = new Intent(countryRecipe.this, recipeDetail.class);
                     intent.putExtra("id", countryRecipes.get(position).getId());
                     intent.putExtra("photo", countryRecipes.get(position).getImgUrl());
+                    intent.putExtra("author", countryRecipes.get(position).getCreated_by());
                     intent.putExtra("mainText", countryRecipes.get(position).getRecipeName());
                     intent.putExtra("procedure_text", countryRecipes.get(position).getRecipeProcedure());
                     intent.putExtra("ingredient_text", countryRecipes.get(position).getIngredients());
@@ -240,6 +241,7 @@ public class countryRecipe extends AppCompatActivity {
                         myRecipesModel mrecipeHistory = new myRecipesModel();
                         mrecipeHistory.setId(countryRecipes.get(position).getId());
                         mrecipeHistory.setImgUrl(countryRecipes.get(position).getImgUrl());
+                        mrecipeHistory.setCreated_by(countryRecipes.get(position).getCreated_by());
                         mrecipeHistory.setIngredients(countryRecipes.get(position).getIngredients());
                         mrecipeHistory.setRating(countryRecipes.get(position).getRating());
                         mrecipeHistory.setRecipeName(countryRecipes.get(position).getRecipeName());

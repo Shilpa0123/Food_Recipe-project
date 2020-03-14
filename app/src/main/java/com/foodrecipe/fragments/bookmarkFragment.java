@@ -129,6 +129,7 @@ public class bookmarkFragment extends Fragment {
                     Intent intent = new Intent(getContext(), recipeDetail.class);
                     intent.putExtra("id", bookmarkList.get(position).getId());
                     intent.putExtra("photo", bookmarkList.get(position).getImgUrl());
+                    intent.putExtra("author", bookmarkList.get(position).getCreated_by());
                     intent.putExtra("mainText", bookmarkList.get(position).getRecipeName());
                     intent.putExtra("procedure_text", bookmarkList.get(position).getRecipeProcedure());
                     intent.putExtra("ingredient_text", bookmarkList.get(position).getIngredients());

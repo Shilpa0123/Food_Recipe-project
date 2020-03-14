@@ -17,6 +17,9 @@ public class myRecipesModel {
     @SerializedName("recipe_procedure")
     @Expose
     private String recipeProcedure;
+    @SerializedName("created_by")
+    @Expose
+    private String created_by;
     @SerializedName("img_url")
     @Expose
     private String imgUrl;
@@ -54,6 +57,14 @@ public class myRecipesModel {
 
     public void setRecipeProcedure(String recipeProcedure) {
         this.recipeProcedure = recipeProcedure;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
     }
 
     public String getImgUrl() {

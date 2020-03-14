@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.foodrecipe.EndPointUrl;
@@ -37,6 +38,7 @@ public class homeFragment extends Fragment {
     private MyRecipesAdapter recipesAdapter;
     private ShimmerFrameLayout shimmer_rv_category, shimmer_rv_main;
     private SearchView searchView;
+    private SwipeRefreshLayout refresh;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class homeFragment extends Fragment {
         searchView = view.findViewById(R.id.searchView);
         shimmer_rv_main = view.findViewById(R.id.shimmer_rv_main);
         shimmer_rv_category = view.findViewById(R.id.shimmer_rv_category);
+        refresh = view.findViewById(R.id.refresh);
 
         searchView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,14 +66,25 @@ public class homeFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                if (s.equals("") || s.equals(" ") || s.isEmpty())
+                if (s.equals("") || s.equals(" ") || s.isEmpty()) {
                     rv_search.setVisibility(View.GONE);
-                else {
+                    searchAdapter = null;
+                } else {
                     new search().execute();
                 }
                 return false;
             }
         });
+        refresh.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        new getCategories().execute();
+                        new getallRecipes().execute();
+                        refresh.setRefreshing(false);
+                    }
+                }
+        );
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView.LayoutManager searchLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);

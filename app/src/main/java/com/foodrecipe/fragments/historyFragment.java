@@ -128,6 +128,7 @@ public class historyFragment extends Fragment {
                     Intent intent = new Intent(getContext(), recipeDetail.class);
                     intent.putExtra("id", historyList.get(position).getImgUrl());
                     intent.putExtra("photo", historyList.get(position).getImgUrl());
+                    intent.putExtra("author", historyList.get(position).getCreated_by());
                     intent.putExtra("mainText", historyList.get(position).getRecipeName());
                     intent.putExtra("procedure_text", historyList.get(position).getRecipeProcedure());
                     intent.putExtra("ingredient_text", historyList.get(position).getIngredients());

@@ -219,6 +219,7 @@ public class AddRecipesActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<UploadObject> call, Throwable t) {
+                    Log.e(TAG, "onFailure: "+t.getMessage() );
                     Toast.makeText(AddRecipesActivity.this, "Recipe Upload Failed", Toast.LENGTH_LONG).show();
                 }
             });

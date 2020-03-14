@@ -2,6 +2,7 @@ package com.foodrecipe.fragments;
 
 import android.Manifest;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,9 +15,11 @@ import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -114,7 +117,8 @@ public class newProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 edit.setVisibility(View.VISIBLE);
-                updateProfile(String.valueOf(tv_user.getText()), phone_input.getText().toString(), email_input.getText().toString(), password_input.getText().toString(), username_input.getText().toString());
+                validateData(String.valueOf(tv_user.getText()), phone_input.getText().toString(), email_input.getText().toString(), password_input.getText().toString(), username_input.getText().toString());
+//                updateProfile(String.valueOf(tv_user.getText()), phone_input.getText().toString(), email_input.getText().toString(), password_input.getText().toString(), username_input.getText().toString());
             }
         });
         iv_user.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +150,48 @@ public class newProfileFragment extends Fragment {
                         token.continuePermissionRequest();
                     }
                 }).check();
+            }
+        });
+
+        //keylisteners
+        email_input.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == 66) {
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.showSoftInput(username_input, InputMethodManager.SHOW_FORCED);
+                }
+                return false;
+            }
+        });
+
+        password_input.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == 66) {
+                    btn_profile_save.performClick();
+                    btn_profile_save.setPressed(true);
+                    btn_profile_save.invalidate();
+                }
+                return false;
+            }
+        });
+
+        phone_input.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == 66) {
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.showSoftInput(password_input, InputMethodManager.SHOW_FORCED);
+                }
+                return false;
+            }
+        });
+
+        username_input.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == 66) {
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.showSoftInput(phone_input, InputMethodManager.SHOW_FORCED);
+                }
+                return false;
             }
         });
 
@@ -208,7 +254,7 @@ public class newProfileFragment extends Fragment {
                         .withMaxResultSize(1000, 1000)
                         .start(getContext(), this, UCrop.REQUEST_CROP);
             }
-        } else if (requestCode == UCrop.REQUEST_CROP && data != null) {
+        } else if (requestCode == UCrop.REQUEST_CROP && data != null && data.getData() != null) {
             String filePath = UCrop.getOutput(data).getPath();
             file = new File(filePath);
 //            new uploadPhoto().execute();

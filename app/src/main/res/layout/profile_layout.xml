@@ -116,13 +116,16 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/email_input"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/email"
+        android:hint="enter your email"
         android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@null"
         android:enabled="false"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textSize="@dimen/_12ssp" />
 
@@ -149,13 +152,16 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/username_input"
-        android:layout_width="wrap_content"
+        android:hint="enter your username"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
         android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@null"
         android:enabled="false"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textSize="@dimen/_12ssp" />
 
@@ -182,13 +188,16 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/phone_input"
-        android:layout_width="wrap_content"
+        android:hint="enter your phone number"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone"
+        android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginLeft="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@null"
         android:enabled="false"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textSize="@dimen/_12ssp" />
 
@@ -215,13 +224,17 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_input"
-        android:layout_width="wrap_content"
+        android:inputType="textPassword"
+        android:hint="enter your password"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@null"
         android:enabled="false"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textSize="@dimen/_12ssp" />
 
